@@ -1,29 +1,21 @@
-<form id="form">
-  <label for="email">E-mail:</label>
-  <input type="text" id="email" name="email">
-  <span id="error-email" style="color:red; display:none;">E-mail inválido!</span>
-  <br><br>
-  <button type="submit">Enviar</button>
-</form>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Validação de E-mail</title>
+    <link rel="stylesheet" href="style.css"> <!-- Importa o CSS -->
+</head>
+<body>
+    <form id="form">
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="email">
+        <span id="error-email" class="error">E-mail inválido!</span>
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
 
-<script>
-  document.getElementById("form").addEventListener("submit", function(event) {
-    event.preventDefault(); // impede envio automático
-
-    const emailInput = document.getElementById("email").value;
-    const errorSpan = document.getElementById("error-email");
-
-    // Expressão regular para validar formato de e-mail
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!regexEmail.test(emailInput)) {
-      errorSpan.style.display = "inline";
-    } else {
-      errorSpan.style.display = "none";
-      alert("E-mail válido! Formulário enviado.");
-      // aqui você pode prosseguir com o envio real
-    }
-  });
-</script>
+    <script src="script.js"></script> <!-- Importa o Java -->
+</body>
+</html>
 
 
